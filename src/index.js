@@ -20,7 +20,7 @@ class App extends React.Component {
   }
   async deleteCounter(id) {
     await axios.delete(`/api/counters/:${id}`);
-    // await this.getAndRender();
+    await this.getAndRender();
   }
   async getAndRender() {
     const response = await axios.get("/api/counters");
