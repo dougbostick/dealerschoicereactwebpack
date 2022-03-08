@@ -18,10 +18,10 @@ class App extends React.Component {
     await axios.post("/api/counters");
     await this.getAndRender();
   }
-  async deleteCounter(id) {
-    await axios.delete(`/api/counters/${id}`);
-    await this.getAndRender();
-  }
+  // async deleteCounter(id) {
+  //   await axios.delete(`/api/counters/:${id}`);
+  //   await this.getAndRender();
+  // }
   async getAndRender() {
     const response = await axios.get("/api/counters");
     const data = response.data;
@@ -30,7 +30,7 @@ class App extends React.Component {
   render() {
     const counterEls = this.state.counters.map((counter) => {
       return (
-        <li key={counter.id} onClick={this.deleteCounter(counter.id)}>
+        <li key={counter.id} /*onClick={this.deleteCounter(counter.id)}*/>
           {counter.value}
         </li>
       );
