@@ -19,7 +19,7 @@ class App extends React.Component {
     await this.getAndRender();
   }
   async deleteCounter(id) {
-    await axios.delete(`/api/counters/:${id}`);
+    await axios.delete(`/api/counters/${id}`);
     await this.getAndRender();
   }
   async getAndRender() {
