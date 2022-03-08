@@ -18,6 +18,10 @@ class App extends React.Component {
     await axios.post("/api/counters");
     await this.getAndRender();
   }
+  //   async deleteCounter() {
+  //     await axios.delete(`api/counters/:id`);
+  //    // await this.getAndRender();
+  //   }
   async getAndRender() {
     const response = await axios.get("/api/counters");
     const data = response.data;

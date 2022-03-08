@@ -38,6 +38,12 @@ app.post("/api/counters", async (req, res, next) => {
   }
 });
 
+// app.delete("/api/counters/:id", async (req, res, next) => {
+//   const target = await Counters.findByPk(req.params.id);
+//   target.destroy();
+//   res.sendStatus(204);
+// });
+
 const init = async () => {
   await sequelize.sync({ force: true });
   console.log("syncd");
@@ -48,7 +54,7 @@ const init = async () => {
     value: 2,
   });
   console.log("seeded");
-  const port = 9999;
+  const port = process.env.PORT || 9999;
   app.listen(port, () => {
     console.log(`listening on port ${port}`);
   });
