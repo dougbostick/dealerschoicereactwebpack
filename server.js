@@ -38,11 +38,11 @@ app.post("/api/counters", async (req, res, next) => {
   }
 });
 
-// app.delete("/api/counters/:id", async (req, res, next) => {
-//   const target = await Counters.findByPk(req.params.id);
-//   target.destroy();
-//   res.sendStatus(204);
-// });
+app.delete("/api/counters/:id", async (req, res, next) => {
+  const target = await Counters.findByPk(req.params.id);
+  target.destroy();
+  res.sendStatus(204);
+});
 
 const init = async () => {
   await sequelize.sync({ force: true });
